@@ -1,13 +1,15 @@
 # == Schema Information
 #
-# Table name: events
+# Table name: event_coaches
 #
 #  id         :integer          not null, primary key
+#  event_id   :integer
+#  coach_id   :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Event < ActiveRecord::Base
-	has_many :event_coaches
-	has_many :coaches, through: :event_coaches
+class EventCoach < ActiveRecord::Base
+	belongs_to :event
+	belongs_to :coach
 end

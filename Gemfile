@@ -18,6 +18,7 @@ gem 'devise_invitable'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'simple_form'
+gem 'annotate'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
