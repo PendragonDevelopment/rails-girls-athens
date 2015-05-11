@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150510214523) do
+ActiveRecord::Schema.define(version: 20150511221757) do
 
   create_table "coaches", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,9 +26,49 @@ ActiveRecord::Schema.define(version: 20150510214523) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "event_locations", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "location_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "event_locations", ["event_id"], name: "index_event_locations_on_event_id"
+  add_index "event_locations", ["location_id"], name: "index_event_locations_on_location_id"
+
+  create_table "event_sponsors", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "sponsor_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "event_sponsors", ["event_id"], name: "index_event_sponsors_on_event_id"
+  add_index "event_sponsors", ["sponsor_id"], name: "index_event_sponsors_on_sponsor_id"
+
   create_table "events", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "address"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "capacity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "url"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "linkedin"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
