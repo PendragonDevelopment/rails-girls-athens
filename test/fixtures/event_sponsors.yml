@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: event_sponsors
+#
+#  id         :integer          not null, primary key
+#  event_id   :integer
+#  sponsor_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  event_id: 
+  sponsor_id: 
+
+two:
+  event_id: 
+  sponsor_id: 

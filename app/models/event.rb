@@ -7,7 +7,9 @@
 #  updated_at :datetime         not null
 #
 
-class Event < ActiveRecord::Base
+class Event < ActiveRecord::Base=
+  has_many :event_sponsors
+  has_many :sponsors, through: :event_sponsors
 	has_many :event_coaches
 	has_many :coaches, through: :event_coaches
   has_many :event_locations
