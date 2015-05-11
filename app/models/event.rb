@@ -12,4 +12,6 @@ class Event < ActiveRecord::Base
 	has_many :coaches, through: :event_coaches
   has_many :event_locations
   has_many :locations, through: :event_locations
+	has_many :event_attendees
+	has_many :attendees, through: :event_attendees
 end
