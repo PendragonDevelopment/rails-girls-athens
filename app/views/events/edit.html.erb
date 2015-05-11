@@ -1,0 +1,10 @@
+<h1>Edit Event</h1>
+<%= simple_form_for @event do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <div class="col-md-12">
+    <%= f.datetime_field :start_time, {id: "event_start_time"} %>
+  </div>
+
+  <%= f.submit "Update event" %>
+<% end %>

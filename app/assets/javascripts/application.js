@@ -14,4 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
+$(document).on("page:load ready", function(){
+  $('#event_start_time').datetimepicker();
+})
