@@ -8,4 +8,6 @@
 #
 
 class Event < ActiveRecord::Base
+  has_many :event_sponsors
+  has_many :sponsors, through: :event_sponsors
 end
