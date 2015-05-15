@@ -19,4 +19,6 @@
 //= require_tree .
 $(document).on("page:load ready", function(){
   $('#event_start_time').datetimepicker();
-})
+  $('#event_end_time').datetimepicker();
+  $('#deadline').datetimepicker();
+});

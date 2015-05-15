@@ -2,9 +2,23 @@
 <%= simple_form_for @event do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+</br>
   <div class="col-md-12">
+    <%= f.label "Start Time" %>
     <%= f.datetime_field :start_time, {id: "event_start_time"} %>
+  </br>
+    <%= f.label "End Time" %>
+    <%= f.datetime_field :end_time, {id: "event_end_time"} %>
+  </br>
+    <%= f.label "Deadline" %>
+    <%= f.datetime_field :deadline, {id: "deadline"} %>
   </div>
 
   <%= f.submit "Update event" %>
+ 
 <% end %>
+
+
+
+
+<!--Add end_time, deadline, and event_type fields so they save correctly.-->

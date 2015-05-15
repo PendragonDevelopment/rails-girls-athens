@@ -19,6 +19,8 @@ gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'simple_form'
 gem 'annotate'
+gem 'strftime'
+gem 'simple_form'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
