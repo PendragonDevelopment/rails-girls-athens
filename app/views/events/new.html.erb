@@ -1,5 +1,6 @@
 <h1>Add a new event</h1>
 
+
 <%= simple_form_for(@event) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
@@ -7,6 +8,7 @@
   <%= f.label :description %>
   <%= f.text_area :description %>
 
+  <%= f.label :event_type %>
   <%= f.input :event_type, collection: Event.event_types.keys.to_a %>
 
   <%= f.label :start_time %>
@@ -18,6 +20,9 @@
   <%= f.label :deadline %>
   <%= f.datetime_field :deadline %>
 
+  <%= f.label :location %>
+  <%= f.association :locations %>
+
 <!--
   # We need to figure out how to work with the event location - perhaps choose from dropdown or link to make a new location
   # simple form assoc helper
@@ -27,5 +32,6 @@
 
   <%= f.submit "Create the event", class: "btn btn-primary" %>
 <% end %>
+
 
 
