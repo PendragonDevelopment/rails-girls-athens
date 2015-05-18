@@ -27,20 +27,22 @@ class EventsController < ApplicationController
 
   def update
     if @event.update_attributes(event_params)
+      @event.update_attributes(start_time: parse_datetime(params[:event][:start_time]))
+      @event.update_attributes(end_time: parse_datetime(params[:event][:end_time]))
       redirect_to @event, notice: "Event updated"
     else
       render :edit, notice: "Update failed"
     end
   end
 
-  def destroy 
+  def destroy
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
-  
+
 
   private
 
