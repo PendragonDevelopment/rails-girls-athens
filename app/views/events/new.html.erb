@@ -11,24 +11,22 @@
   <%= f.label :event_type %>
   <%= f.input :event_type, collection: Event.event_types.keys.to_a %>
 
-  <%= f.label :start_time %>
-  <%= f.datetime_field :start_time %>
+  <div class='input-group'>
+    <%= f.label :start_time %>
+    <%= f.datetime_field :start_time, class: "form-control", placeholder: "Event start date", id: "event_start_time" %>
+  </div>
+  <div class='input-group'>
+    <%= f.label :end_time %>
+    <%= f.datetime_field :end_time, class: "form-control", placeholder: "Event end date", id: "event_end_time" %>
+  </div>
 
-  <%= f.label :end_time %>
-  <%= f.datetime_field :end_time %>
-  
-  <%= f.label :deadline %>
-  <%= f.datetime_field :deadline %>
 
-  <%= f.label :location %>
+  <div class='input-group'>
+    <%= f.label :deadline %>
+    <%= f.datetime_field :deadline, class: "form-control", placeholder: "Event deadline", id: "event_deadline" %>
+  </div>
+
   <%= f.association :locations %>
-
-<!--
-  # We need to figure out how to work with the event location - perhaps choose from dropdown or link to make a new location
-  # simple form assoc helper
-  # options for collection (dropdown)
-
--->
 
   <%= f.submit "Create the event", class: "btn btn-primary" %>
 <% end %>

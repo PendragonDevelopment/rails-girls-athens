@@ -19,6 +19,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
+      @event.update_attributes(start_time: parse_datetime(params[:event][:start_time]))
+      @event.update_attributes(end_time: parse_datetime(params[:event][:end_time]))
       redirect_to @event
     else
       render :new
