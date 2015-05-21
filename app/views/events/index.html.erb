@@ -5,11 +5,4 @@
     	<%= link_to event.name, event %> | <%= link_to 'Edit', edit_event_path(event) %> | <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %> 
     </li>
   <% end %>
-
-	<% @locations.each do |location|%>
-		<%= location.title %>	
-	<% end %>s
-
-  <%= link_to 'Add new location', new_location_path %>
-  <%= link_to 'Add new event', new_event_path %>
 </ul>
