@@ -3,6 +3,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @locations = Location.all
   end
 
   def show
